@@ -1,6 +1,5 @@
 use std::mem;
 
-
 pub struct List {
     head: Link,
 }
@@ -25,7 +24,7 @@ impl List {
             elem: elem,
             next: mem::replace(&mut self.head, Link::Empty),
         });
-    
+
         self.head = Link::More(new_node);
     }
 
@@ -38,8 +37,6 @@ impl List {
             }
         }
     }
-    
-    
 }
 
 impl Drop for List {
@@ -54,10 +51,6 @@ impl Drop for List {
         }
     }
 }
-
-
-
-
 
 // tests
 #[cfg(test)]
@@ -92,5 +85,3 @@ mod test {
         assert_eq!(list.pop(), None);
     }
 }
-
-
